@@ -2,7 +2,6 @@ import { OrdersInterface, Product } from "@/interfaces/ordersInterface";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "@/store/store";
 
-// Define the type for the 'el' parameter inside the for-of loop
 type OrderWithProducts = {
     id: number;
     type: string;
@@ -11,7 +10,7 @@ type OrderWithProducts = {
     date: string;
     price: number;
     checked: boolean;
-    products: Product[]; // Assuming 'Product' is the correct type for products
+    products: Product[];
 };
 
 const initialState: OrdersInterface = {
