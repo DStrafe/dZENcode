@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Product({product}){
+export default function Product({product}:any){
     return(
         <div className="product">
             <div className="card mb-3 w-100 h-25 overflow-hidden">

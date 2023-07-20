@@ -1,6 +1,7 @@
-export interface CategoriesInterface{
+export interface CategoriesInterface {
     categoriesList:
-        {key: string,
-            name: string,
+        {
+            key?: string,
+            name?: string,
         }[];
 }

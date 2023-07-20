@@ -5,7 +5,7 @@ import DeleteModal from "@/components/DeleteModal";
 import {actions as ordersActions} from "@/slices/ordersSlice";
 import Button from "react-bootstrap/Button";
 
-const ActiveProduct = ({activeProducts, isChecked}) => {
+const ActiveProduct = ({activeProducts, isChecked}:any) => {
 
     return (
         <div

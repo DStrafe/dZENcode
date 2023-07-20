@@ -16,9 +16,9 @@ function Home() {
 
     const dispatch = useAppDispatch();
 
-    const collapseModal =()=>{
-        dispatch(ordersActions.setChecked({collapse:true}))
-    }
+    const collapseModal = () => {
+        dispatch(ordersActions.setChecked({collapse: true }));
+    };
 
 
     return (

@@ -5,16 +5,24 @@ import DeleteModal from "@/components/DeleteModal";
 import Arrow from "@/components/svg/arrow";
 import {useAppDispatch, useAppSelector} from "@/hooks/hooks";
 import {actions as ordersActions} from "@/slices/ordersSlice";
+import {Order} from "@/interfaces/orderCardInterface";
 
-const OrdersCard = ({order}:any) => {
 
-    const isChecked = useAppSelector(state => state.orders.orders[order.id].checked)
+const OrdersCard = ({ order }: { order: Order }) => {
+
+    const isChecked = useAppSelector(state => {
+        // @ts-ignore
+        const orderData = state.orders.orders[order.id];
+        return orderData ? orderData.checked : false;
+    });
+
 
     const dispatch = useAppDispatch()
 
     const toggleShow = () => {
         dispatch(ordersActions.setChecked({
-            id:order.id,
+            id: order.id,
+            collapse: false
         }));
     };
 
@@ -48,8 +56,8 @@ const OrdersCard = ({order}:any) => {
                             <p>{order.date}</p>
                         </div>
                         <div className="price d-flex flex-column w-100">
-                            <p className="card-text text-success">{order.price + '$'}</p>
-                            <p className="card-text text-success-emphasis">{Math.round(order.price * 37) + ' UAH'}</p>
+                            <p className="card-text text-success">{order.price?.toString() + '$'}</p>
+                            <p className="card-text text-success-emphasis">{Math.round((order.price ?? 0) * 37) + ' UAH'}</p>
                         </div>
                         <div className="delete__post w-100">
                             <button className={`position-absolute trash bg-transparent border-0 ${isChecked ?'opacity-0 z-0' : 'opacity-100 z-1'}`}>
@@ -78,6 +86,7 @@ const OrdersCard = ({order}:any) => {
                 >
                     <div className="dot position-relative d-flex align-items-center justify-content-center w-25 ">
                         <Dot color={order.id % 2 ? 'black' : '#CDDC39'} />
+
                     </div>
                     {renderOrderInfo()}
                 </Suspense>

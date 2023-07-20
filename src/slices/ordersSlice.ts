@@ -1,6 +1,18 @@
-import {OrdersInterface} from "@/interfaces/ordersInterface";
-import {createSlice} from "@reduxjs/toolkit";
-import {RootState} from "@/store/store";
+import { OrdersInterface, Product } from "@/interfaces/ordersInterface";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { RootState } from "@/store/store";
+
+// Define the type for the 'el' parameter inside the for-of loop
+type OrderWithProducts = {
+    id: number;
+    type: string;
+    title: string;
+    number: number;
+    date: string;
+    price: number;
+    checked: boolean;
+    products: Product[]; // Assuming 'Product' is the correct type for products
+};
 
 const initialState: OrdersInterface = {
     orders: [
@@ -204,12 +216,14 @@ const initialState: OrdersInterface = {
 }
 
 export const ordersSlice = createSlice({
-    name: 'orders',
+    name: "orders",
     initialState,
     reducers: {
-        deleteOrder: (state, action) => {
+        deleteOrder: (state, action: PayloadAction<number>) => {
             try {
-                state.currentOrders = state.currentOrders.filter(el => el.id !== action.payload);
+                state.currentOrders = state.currentOrders.filter(
+                    (el) => el.id !== action.payload
+                );
             } catch (e) {
                 console.log(e);
             }
@@ -217,44 +231,41 @@ export const ordersSlice = createSlice({
         updateOrders: (state) => {
             try {
                 state.currentOrders = state.orders;
-
             } catch (e) {
-                console.log(e)
-            }
-
-        },
-        setChecked:(state, action)=>{
-            try {
-                    for(const el of state.orders){
-
-                        if(!el.checked && el.id === action.payload.id){
-                            el.checked = true;
-                            state.activeProducts = JSON.parse(JSON.stringify(el));
-                        }
-                        else{
-                            if(el.collapse === true){
-                                el.checked = false;
-                            }
-                            el.checked = false;
-                        }
-                    }
-
-            }
-            catch (e){
-                console.log(e)
-            }
-        },
-        deleteActiveProduct: (state, action) => {
-            try {
-                state.activeProducts.products = state.activeProducts.products.filter(el => el.id !== action.payload);
-            }
-            catch (e) {
                 console.log(e);
             }
         },
-    }
-})
+        setChecked: (state, action: PayloadAction<{ id?: number; collapse?: boolean }>) => {
+            try {
+                for (const el of state.orders as OrderWithProducts[]) { // Cast 'state.orders' to the correct type
+                    if (!el.checked && el.id === action.payload.id) {
+                        el.checked = true;
+                        state.activeProducts = JSON.parse(JSON.stringify(el));
+                    } else {
+                        if (action.payload.collapse === true) {
+                            el.checked = false;
+                        }
+                        el.checked = false;
+                    }
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        },
+        deleteActiveProduct: (state, action: PayloadAction<number>) => {
+            try {
+                if (state.activeProducts) {
+                    state.activeProducts.products = state.activeProducts.products.filter(
+                        (el) => el.id !== action.payload
+                    );
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        },
+    },
+});
 
-export const {actions, reducer} = ordersSlice
-export const selectOrders = (state: RootState) => state.orders
-export default ordersSlice.reducer
+export const { actions, reducer } = ordersSlice;
+export const selectOrders = (state: RootState) => state.orders;
+export default ordersSlice.reducer;

@@ -1,5 +1,5 @@
-export interface OrdersInterface{
-    orders:{
+export interface OrdersInterface {
+    orders: {
         id?: number,
         type?: string,
         title?: string,
@@ -13,7 +13,7 @@ export interface OrdersInterface{
             image?: string,
         }[],
     }[],
-    currentOrders:{
+    currentOrders: {
         id?: number,
         type?: string,
         title?: string,
@@ -28,9 +28,15 @@ export interface OrdersInterface{
         }[],
     }[],
     checkedOrders?: {}[],
-    activeProducts?:{
-        id: number,
-        title:string,
-        image: string,
-    }[],
+    activeProducts?: {
+        id?: number,
+        title?: string,
+        image?: string,
+    }[] | undefined,
+}
+
+export interface Product {
+    id?: number;
+    title?: string;
+    image?: string;
 }

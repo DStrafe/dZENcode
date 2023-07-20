@@ -15,7 +15,6 @@ function DeleteModal({product, func}:any) {
         setShow(false);
         dispatch(func(product.id));
     }
-    console.log(product.id)
     return (
         <>
             <button className='bg-transparent border-0' onClick={handleShow}>
