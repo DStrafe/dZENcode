@@ -3,9 +3,7 @@ import Dot from "@/components/svg/dot";
 import {ProductImage} from "@/components/ProductImage";
 import DeleteModal from "@/components/DeleteModal";
 import {actions as ordersActions} from "@/slices/ordersSlice";
-import {useAppSelector} from "@/hooks/hooks";
 import Button from "react-bootstrap/Button";
-import Cross from "@/components/svg/cross";
 
 const ActiveProduct = ({activeProducts, isChecked}) => {
 
@@ -31,7 +29,7 @@ const ActiveProduct = ({activeProducts, isChecked}) => {
                 </div>
             </div>
             <div className="position-relative">
-                {activeProducts && activeProducts.products && activeProducts.products.map((product: any, index: number) => (
+                {activeProducts && activeProducts.products && activeProducts.products.map((product: any) => (
                     <div className='ali'>
                         <div className='d-flex flex-row my-2 border-top border-bottom border-black'>
                             <div

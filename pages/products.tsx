@@ -3,7 +3,6 @@ import MainContainer from "./MainContainer";
 import {useAppDispatch, useAppSelector} from "@/hooks/hooks";
 import {actions as productsActions} from "@/slices/productsSlice";
 import ProductCard from "@/components/card/ProductCard";
-import {actions as ordersActions} from "@/slices/ordersSlice";
 
 const Products = ({products}:any) => {
     const categories = useAppSelector(state => state.categories.categoriesList);
@@ -63,7 +62,7 @@ const Products = ({products}:any) => {
 
 export default Products;
 
-export async function getStaticProps(context: any) {
+export async function getStaticProps() {
     const response = await fetch('https://dummyjson.com/products');
     const products = await response.json();
     return {

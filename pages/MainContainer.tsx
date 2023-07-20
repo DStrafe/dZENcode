@@ -4,8 +4,6 @@ import TopMenu from "@/components/header/TopMenu";
 import NavMenu from "@/components/sidebar/NavMenu";
 import fetchTime from "@/components/fetchTime";
 import Button from "react-bootstrap/Button";
-import A from "@/components/A/A";
-import {useRouter} from "next/router";
 import PageTransition from "@/components/PageTransition";
 
 const MainContainer = ({children}: any) => {

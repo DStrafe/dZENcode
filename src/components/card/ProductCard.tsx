@@ -56,13 +56,8 @@ const ProductAvailability = ({ product }: any) => {
 };
 
 const ProductCard = ({ product }: any) => {
-    const [isVisible, setIsVisible] = useState(true);
-    const dispatch = useAppDispatch();
 
     const renderProductInfo = () => {
-        if (!isVisible) {
-            return null;
-        }
 
         return (
             <div className="col-md-8 w-100 align-items-center">

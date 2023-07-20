@@ -1,4 +1,4 @@
-import React, {Suspense, useState} from 'react';
+import React, {Suspense} from 'react';
 import {Spinner} from "react-bootstrap";
 import Dot from "@/components/svg/dot";
 import DeleteModal from "@/components/DeleteModal";
