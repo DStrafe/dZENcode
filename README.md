@@ -38,9 +38,8 @@ To install dZENcode, follow these steps:
 
 4. Launch dZENcode:
    ```
-   npm build
-   ```
-   ```
+   npm run build
+
    npm start
    ```
 
