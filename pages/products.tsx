@@ -7,8 +7,7 @@ import ProductCard from "@/components/card/ProductCard";
 const Products = ({products}:any) => {
     const categories = useAppSelector(state => state.categories.categoriesList);
     const dispatch = useAppDispatch();
-    const currentProducts = useAppSelector(state => state.products.currentProducts);
-
+    const currentProducts = useAppSelector(state => state.products.currentProducts) || [];
 
 
     useEffect(()=>{
