@@ -1,0 +1,122 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+*{
+  transition: all 0.3s ease;
+}
+
+body, html {
+  height: 100%;
+  background: #F0F3F5;
+}
+.wrapper{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.content{
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  width: 100%;
+}
+.arrow{
+  position: absolute;
+  height: 10vh;
+  width: 10%;
+}
+.logout{
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cards__container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.available{
+  width: 25%;
+}
+.products__list, .orders__list{
+  top:30%;
+  left: 12%;
+  overflow: scroll;
+  max-height: 60%;
+}
+.orders__products{
+  top:30%;
+  left: 62%;
+  overflow: hidden;
+  max-height: 60%;
+  width: 35%;
+}
+.cross{
+  top: 28.5%;
+  right: 2.5%;
+  z-index: 99;
+}
+.add__product{
+  left:0;
+
+  max-width: 40%;
+}
+
+.setting__form{
+  top:15%;
+  left: 12%;
+  overflow: hidden;
+  max-height: 50%;
+}
+
+.card__image{
+  width: 10%;
+}
+.dot{
+  left: 0.7%;
+}
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 11%;
+}
+.price{
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  width: 10%;
+
+}
+.trash{
+    top: 35%;
+    right:2.65%;
+}
+.gear{
+  position: absolute;
+  top: 15.5%;
+  left: 55%;
+}
+.logo-text{
+  color:#7CB342;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.sidebar{
+  top:0;
+  position: fixed;
+  width: 10%;
+  height: 91.5vh;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navi{
+  background: #FFFFFF;
+}
