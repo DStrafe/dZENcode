@@ -1,11 +1,8 @@
 import React, {useState} from 'react';
-import {useAppDispatch} from "@/hooks/hooks";
 import Modal from "react-bootstrap/Modal";
 import Dot from "@/components/svg/dot";
 import {ProductImage} from "@/components/ProductImage";
 import Button from "react-bootstrap/Button";
-import Trashcan from "@/components/svg/trashcan";
-import OrdersCard from "@/components/card/OrdersCard";
 
 const BurgerButton = ({className, order}:any) => {
     const [show, setShow] = useState(false);
@@ -32,7 +29,7 @@ const BurgerButton = ({className, order}:any) => {
                 </Modal.Header>
                 <Modal.Body>
                     <div className="modal__wrapper">
-                        {order.products.map((el: any, index: number) => (
+                        {order.products.map((el: any) => (
                             <div className="modal__container d-flex flex-row mb-5">
                                 <div className="dot position-relative d-flex align-items-center justify-content-center w-25 ">
                                     <Dot color={el.id % 2 ? 'black' : '#CDDC39'} />

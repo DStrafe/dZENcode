@@ -1,11 +1,8 @@
 import React, { Suspense, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import Dot from '@/components/svg/dot';
-import A from '@/components/A/A';
-import Trashcan from '@/components/svg/trashcan';
 import {useAppDispatch} from "@/hooks/hooks";
-import {actions as productsActions, actions as itemsActions} from "@/slices/productsSlice";
-import Trash from "@/components/DeleteModal";
+import {actions as productsActions} from "@/slices/productsSlice";
 import {ProductImage} from "@/components/ProductImage";
 import DeleteModal from "@/components/DeleteModal";
 
