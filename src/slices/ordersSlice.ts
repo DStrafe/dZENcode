@@ -214,7 +214,7 @@ export const ordersSlice = createSlice({
                 console.log(e);
             }
         },
-        updateOrders: (state, action) => {
+        updateOrders: (state) => {
             try {
                 state.currentOrders = state.orders;
 
