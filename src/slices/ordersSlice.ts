@@ -1,7 +1,6 @@
 import {OrdersInterface} from "@/interfaces/ordersInterface";
 import {createSlice} from "@reduxjs/toolkit";
 import {RootState} from "@/store/store";
-import {act} from "react-dom/test-utils";
 
 const initialState: OrdersInterface = {
     orders: [

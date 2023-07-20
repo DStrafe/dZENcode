@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Trashcan from "@/components/svg/trashcan";
-import {actions as productsActions} from "@/slices/productsSlice";
-import {actions as ordersActions} from "@/slices/ordersSlice";
 import {useAppDispatch} from "@/hooks/hooks";
 import Dot from "@/components/svg/dot";
 import {ProductImage} from "@/components/ProductImage";

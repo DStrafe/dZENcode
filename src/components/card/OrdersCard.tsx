@@ -2,14 +2,11 @@ import React, {Suspense, useState} from 'react';
 import {Spinner} from "react-bootstrap";
 import Dot from "@/components/svg/dot";
 import DeleteModal from "@/components/DeleteModal";
-import BurgerButton from "@/components/burgerButton";
-import Modal from "react-bootstrap/Modal";
 import Arrow from "@/components/svg/arrow";
 import {useAppDispatch, useAppSelector} from "@/hooks/hooks";
 import {actions as ordersActions} from "@/slices/ordersSlice";
 
-const OrdersCard = ({order, show, setShow}:any) => {
-    const [isVisible, setIsVisible] = useState(true);
+const OrdersCard = ({order}:any) => {
 
     const isChecked = useAppSelector(state => state.orders.orders[order.id].checked)
 
@@ -22,10 +19,6 @@ const OrdersCard = ({order, show, setShow}:any) => {
     };
 
     const renderOrderInfo = () => {
-        if (!isVisible) {
-            return null;
-        }
-
 
         return (
             <div className={`col-md-8 w-100 align-items-center d-flex flex-row`}>
