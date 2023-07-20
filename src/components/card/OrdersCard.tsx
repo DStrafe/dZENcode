@@ -85,7 +85,11 @@ const OrdersCard = ({ order }: { order: Order }) => {
                     }
                 >
                     <div className="dot position-relative d-flex align-items-center justify-content-center w-25 ">
-                        <Dot color={order.id % 2 ? 'black' : '#CDDC39'} />
+                        <Dot color={
+                            order.id && order.id % 2
+                            ? 'black' :
+                            '#CDDC39'
+                        } />
 
                     </div>
                     {renderOrderInfo()}

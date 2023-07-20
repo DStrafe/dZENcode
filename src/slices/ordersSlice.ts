@@ -255,8 +255,9 @@ export const ordersSlice = createSlice({
         deleteActiveProduct: (state, action: PayloadAction<number>) => {
             try {
                 if (state.activeProducts) {
+                    // @ts-ignore
                     state.activeProducts.products = state.activeProducts.products.filter(
-                        (el) => el.id !== action.payload
+                        (el:any) => el && el.id !== action.payload
                     );
                 }
             } catch (e) {

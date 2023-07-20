@@ -14,9 +14,11 @@ export const productsSlice = createSlice({
         chooseCategory:(state, action)=>{
             try {
                 if(action.payload === 'all'){
+                    // @ts-ignore
                     state.currentProducts = state.products.filter(el=> el.category !== action.payload);
                     return
                 }
+                // @ts-ignore
                 state.currentProducts = state.products.filter(el=> el.category === action.payload)
             }catch (e) {
                 console.log(e)
@@ -25,6 +27,7 @@ export const productsSlice = createSlice({
         },
         deleteProduct:(state, action)=>{
             try{
+                // @ts-ignore
                 state.currentProducts = state.currentProducts.filter(el=> el.id !== action.payload);
             }catch (e) {
                 console.log(e);
