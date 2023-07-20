@@ -37,9 +37,8 @@ const MainContainer = ({children}: any) => {
             <div className="wrapper z-3">
                 <div className="content z-3">
                     <Head>
-                        <title>dZenCode</title>
+                        <title>dZENcode</title>
                         <meta charSet="UTF-8"/>
-                        <meta name="description" content="Majestic Trade"/>
                         <meta name="viewport" content="width=device-width"/>
                         <link rel="icon" type="image/x-icon" href="/images/ico/favicon.ico"/>
                     </Head>
